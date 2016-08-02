@@ -1,0 +1,25 @@
+{
+   "kind":"Service",
+   "apiVersion":"v1",
+   "metadata":{
+      "name":"springsession-service",
+      "labels":{
+         "app":"springsession",
+	 "hystrix.enabled":"true"
+      }
+   },
+   "spec":{
+      "ports": [
+        {
+          "port":8080,
+          "targetPort":"http-server"
+        }
+      ],
+      "externalIPs" : [
+            "192.168.99.100"
+      ],
+      "selector":{
+         "app":"springsession"
+      }
+   }
+}

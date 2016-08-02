@@ -1,0 +1,38 @@
+{
+   "kind":"ReplicationController",
+   "apiVersion":"v1",
+   "metadata":{
+      "name":"hystrix-dashboard-rc",
+      "labels":{
+         "app":"hystrix-dashboard"
+      }
+   },
+   "spec":{
+      "replicas":1,
+      "selector":{
+         "app":"hystrix-dashboard"
+      },
+      "template":{
+         "metadata":{
+            "labels":{
+               "app":"hystrix-dashboard"
+            }
+         },
+         "spec":{
+            "containers":[
+               {
+                  "name":"hystrix-dashboard",
+                  "image":"fabric8/hystrix-dashboard:1.0.17",
+		  "imagePullPolicy" : "IfNotPresent",
+                  "ports":[
+                     {
+                        "name":"http-server",
+                        "containerPort":8080
+                     }
+                  ]
+               }
+            ]
+         }
+      }
+   }
+}

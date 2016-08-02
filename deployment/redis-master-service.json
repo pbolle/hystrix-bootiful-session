@@ -1,0 +1,26 @@
+{
+   "kind":"Service",
+   "apiVersion":"v1",
+   "metadata":{
+      "name":"redis-master",
+      "labels":{
+         "app":"redis",
+         "role":"master"
+      }
+   },
+   "spec":{
+      "ports": [
+        {
+          "port":6379,
+          "targetPort":"redis-server"
+        }
+      ],
+      "externalIPs" : [
+            "192.168.99.100"
+      ],
+      "selector":{
+         "app":"redis",
+         "role":"master"
+      }
+   }
+}

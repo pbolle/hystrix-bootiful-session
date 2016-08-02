@@ -1,0 +1,38 @@
+{
+   "kind":"ReplicationController",
+   "apiVersion":"v1",
+   "metadata":{
+      "name":"turbineserver-rc",
+      "labels":{
+         "app":"turbineserver"
+      }
+   },
+   "spec":{
+      "replicas":1,
+      "selector":{
+         "app":"turbineserver"
+      },
+      "template":{
+         "metadata":{
+            "labels":{
+               "app":"turbineserver"
+            }
+         },
+         "spec":{
+            "containers":[
+               {
+                  "name":"turbineserver",
+                  "image":"fabric8/turbine-server:1.0.17",
+		  "imagePullPolicy" : "IfNotPresent",
+                  "ports":[
+                     {
+                        "name":"http-server",
+                        "containerPort":8080
+                     }
+                  ]
+               }
+            ]
+         }
+      }
+   }
+}
