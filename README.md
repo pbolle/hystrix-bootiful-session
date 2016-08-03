@@ -2,7 +2,8 @@
 Example for springsession and hystrix in kubernetes.
 
 ## Abstract
-This example shows how to use [springsession](http://projects.spring.io/spring-session/) and [hystrix](https://github.com/Netflix/Hystrix/wiki) in [kubernetes](http://kubernetes.io/). The springsession data is stored in redis. To discover all hystrix pods in kubernetes some functionalites from factory8 are used.
+This example shows how to use [springsession](http://projects.spring.io/spring-session/) and [hystrix](https://github.com/Netflix/Hystrix/wiki) in [kubernetes](http://kubernetes.io/). 
+The springsession data is stored in redis. To discover all hystrix pods in kubernetes some functionalites from (fabric8)[https://fabric8.io/] are used.
 
 ## Overview
 ![example overview](https://raw.githubusercontent.com/pbolle/hystrix-bootiful-session/master/doc/overview.png)
