@@ -11,7 +11,7 @@ This example shows how to use springsession and hystrix in kubernetes. The sprin
 To follow the step by step install and test instructions the following software is required:
 -docker
 -maven
--minikube
+-[minikube](https://github.com/kubernetes/minikube) 
 -redis client (optional)
 -apache benchmarking tool (optional)
 
